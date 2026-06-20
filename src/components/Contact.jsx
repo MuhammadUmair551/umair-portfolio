@@ -57,7 +57,7 @@ export default function Contact() {
             </h2>
             <p className="contact-desc t-body-lg fade-up">
               Have a project in mind or want to talk?
-              Send a message — I reply within 24 hours.
+              Send a message.
             </p>
 
             <div className="contact-details fade-up">
