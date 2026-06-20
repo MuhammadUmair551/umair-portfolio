@@ -1,0 +1,81 @@
+.about { border-bottom: 1px solid var(--line); }
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.about-heading {
+  font-family: var(--sans);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--ink-1);
+  margin-bottom: 2rem;
+}
+.about-heading-serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+}
+
+.about-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.about-card-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding: 1.125rem 1.25rem;
+}
+.about-card-row svg {
+  color: var(--ink-3);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.about-card-divider {
+  height: 1px;
+  background: var(--line);
+}
+.about-card-label {
+  margin-bottom: 0.25rem;
+}
+.about-card-value {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink-1);
+  margin-bottom: 0.125rem;
+}
+.about-card-sub {
+  margin-top: 0.125rem;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 0.25rem;
+}
+.about-para {
+  color: var(--ink-2);
+}
+.about-para:first-child {
+  color: var(--ink-1);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+}

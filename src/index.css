@@ -1,0 +1,124 @@
+/* ─────────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────────── */
+:root {
+  /* Surface */
+  --bg:          #FAFAF9;
+  --bg-subtle:   #F4F4F3;
+  --bg-raised:   #FFFFFF;
+
+  /* Ink */
+  --ink-1:       #18181B;   /* headings, primary */
+  --ink-2:       #3F3F46;   /* body */
+  --ink-3:       #71717A;   /* muted / captions */
+  --ink-4:       #A1A1AA;   /* placeholder, very muted */
+
+  /* Accent — one color, used sparingly */
+  --accent:      #2563EB;
+  --accent-soft: #EFF6FF;
+  --accent-mid:  #BFDBFE;
+
+  /* Borders */
+  --line:        #E4E4E7;
+  --line-2:      #D4D4D8;
+
+  /* Type */
+  --sans:   'DM Sans', system-ui, sans-serif;
+  --serif:  'Instrument Serif', Georgia, serif;
+
+  /* Motion — deliberately minimal */
+  --dur:    200ms;
+  --ease:   cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─────────────────────────────────────────────
+   RESET
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg);
+  color: var(--ink-2);
+  font-family: var(--sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a    { color: inherit; text-decoration: none; }
+ul   { list-style: none; }
+img, svg { display: block; }
+button { cursor: pointer; font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+
+/* ─────────────────────────────────────────────
+   GRID / LAYOUT
+───────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3.5rem);
+}
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY SCALE
+───────────────────────────────────────────── */
+.t-label {
+  font-size: 0.6875rem;   /* 11px */
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.t-body-sm  { font-size: 0.875rem; line-height: 1.65; color: var(--ink-3); }
+.t-body     { font-size: 1rem;     line-height: 1.7;  color: var(--ink-2); }
+.t-body-lg  { font-size: 1.125rem; line-height: 1.75; color: var(--ink-2); }
+
+/* ─────────────────────────────────────────────
+   SCROLL REVEAL — intentionally subtle
+───────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+}
+.fade-in.visible { opacity: 1; }
+
+/* ─────────────────────────────────────────────
+   SHARED COMPONENTS
+───────────────────────────────────────────── */
+
+/* Divider */
+hr.rule {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+/* Section spacing */
+.section {
+  padding-block: clamp(5rem, 10vw, 8rem);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 4px; }
+
+/* Selection */
+::selection { background: var(--accent-mid); color: var(--ink-1); }
