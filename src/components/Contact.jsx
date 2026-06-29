@@ -10,7 +10,7 @@ const EMAILJS_PUBLIC_KEY  = 'ibKos5voSehZrofHy';
 export default function Contact() {
   const formRef = useRef(null);
   const [form, setForm]       = useState({ name: '', email: '', message: '' });
-  const [status, setStatus]   = useState('idle'); // idle | sending | sent | error
+  const [status, setStatus]   = useState('idle');
   const [error, setError]     = useState('');
 
   const handle = (e) => {
@@ -48,7 +48,6 @@ export default function Contact() {
       <div className="container">
 
         <div className="contact-grid">
-          {/* Left — copy */}
           <div className="contact-left">
             <p className="t-label fade-up">Contact</p>
             <h2 className="contact-heading fade-up">
